@@ -1,0 +1,17 @@
+name: Main CI workflow
+
+on: 
+  push:
+    branches:
+    - main
+  
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  run-build:
+    name: Call Reusable Workflow
+    uses: Natthapol-g/node-template/.github/workflows/node-build-template.yml@main
+    with:
+      node-version: '20'
